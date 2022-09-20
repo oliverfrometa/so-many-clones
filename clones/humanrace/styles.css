@@ -1,0 +1,186 @@
+@import url('http://fonts.cdnfonts.com/css/circular-book');
+
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: 'Circular Book', Arial, sans-serif;
+}
+
+a {
+   color: #000;
+   text-decoration: none;
+}
+
+a:hover {
+   color: #000;
+   text-decoration: underline;
+}
+
+nav {
+   position: fixed;
+   background-color: transparent;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   transition: 300ms;
+}
+
+.navigation-items {
+   padding: 19px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.navigation-items a {
+   color: #FFF;
+   transition: 300ms;
+}
+
+.navigation-items:hover {
+   background-color: #FFF;
+}
+
+.navigation-items:hover a {
+   color: #000;
+}
+
+.pill-button {
+   background-color: transparent;
+   border: solid 2px #FFF;
+   color: #FFF;
+   padding: 8px 20px;
+   cursor: pointer;
+   border-radius: 50px;
+   transition: 300ms;
+}
+.pill-button:hover {
+   background-color: #FFF;
+   border: solid 2px #FFF;
+   color: #000;
+}
+
+.nav-contents {
+   font-size: 1.1em;
+   display: flex;
+   gap: 25px;
+}
+
+.nav-logo {
+   height: 20px;
+   width: auto;
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
+}
+
+.burger {
+   display: none;
+   position: absolute;
+}
+
+.burger-line {
+   width: 20px;
+   height: 2px;
+   display: flex;
+   flex-direction: column;
+   background-color: #17873f;
+   margin: 6px 0;
+}
+
+.bag-button {
+   border: none;
+   background-color: transparent;
+   display: flex;
+   gap: 10px;
+}
+
+.bag-button-size {
+   height: 30px;
+   width: 30px;
+   padding: 5px;
+   border-radius: 50%;
+   background-color: #17873f;
+   color: #FFF;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.about-humanrace-container {
+   padding: 19px;
+   width: 100%;
+   background-color: #f7f7f7;
+   display: flex;
+}
+
+.about-humanrace-content {
+   width: 25%;
+}
+
+.hero-container {
+   height: 94vh;
+   width: 100%;
+   display: flex;
+   justify-content: flex-start;
+   align-items: flex-end;
+   background-image: url("https://www.humanrace.com/static/30d84e319bac669b3ffa497042994a20/e1a98/Allure-Beauty-Award-Winner-Facial-Cleanser-Desktop-Banner.webp");
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+}
+
+.hero-title {
+   padding: 19px;
+   color: #FFF;
+}
+
+.hero-sticker-container {
+   border: red solid 2px;
+   position: fixed;
+   height: 100%;
+   width: 100%;
+   padding: 10px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.hero-sticker {
+   max-height: 8em;
+   color: #FFF;
+   
+}
+
+.banner-image {
+   width: 100vw;
+}
+
+.text-block {
+   font-size: 32px;
+   padding: 40px;
+}
+
+
+@media only screen and (max-width: 1000px) {
+   .nav-logo {
+      position: relative;
+   }
+   .burger {
+      position: relative;
+      display: block;
+   }
+   .left-content {
+      display: none;
+   }
+   .bag-button-text {
+      display: none;
+   }
+   .account-button {
+      display: none;
+   }
+ }
