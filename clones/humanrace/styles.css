@@ -6,6 +6,10 @@
    box-sizing: border-box;
 }
 
+:root {
+   --green: color: #17873f;
+}
+
 body {
    font-family: 'Circular Book', Arial, sans-serif;
 }
@@ -27,26 +31,41 @@ nav {
    display: flex;
    flex-direction: column;
    transition: 300ms;
+   z-index: 100;
+   padding: 0px 20px;
+   transform: 300ms;
+}
+
+nav:hover {
+   background-color: #FFF;
+}
+
+nav.active {
+   background-color: #FFF;
+   color: black;
+}
+
+button {
+   border: none;
+   background-color: transparent;
+}
+
+hr {
+   margin: 0;
+   width: 100vw;
+   margin-left: -20px;
+
 }
 
 .navigation-items {
-   padding: 19px;
    display: flex;
    justify-content: space-between;
    align-items: center;
 }
 
 .navigation-items a {
-   color: #FFF;
-   transition: 300ms;
-}
-
-.navigation-items:hover {
-   background-color: #FFF;
-}
-
-.navigation-items:hover a {
    color: #000;
+   transition: 300ms;
 }
 
 .pill-button {
@@ -67,20 +86,74 @@ nav {
 .nav-contents {
    font-size: 1.1em;
    display: flex;
-   gap: 25px;
+}
+
+.nav-links {
+   padding: 18px;
+   width: auto;
+}
+
+#mobile-menu {
+   height: 100%;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   display: none;
+}
+
+#mobile-menu.active {
+   display: flex;
+}
+
+.mobile-nav-links {
+   padding: 15px 0px;
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+}
+
+.sub-menu:hover {
+   color: #17873f;
+   text-decoration: none;
+}
+
+.sub-menu {
+   padding: 15px 0px;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   justify-content: flex-start;
+   display: none;
+}
+
+.sub-menu.active {
+   display: flex;
+}
+
+.sub-menu-links {
+   width: 100%;
+   padding: 8px 0px;
+}
+
+.sub-menu-links:hover {
+   color:#17873f;
+   text-decoration: none;
+}
+
+.right-content {
+   display: flex;
+   align-items: center;
 }
 
 .nav-logo {
    height: 20px;
    width: auto;
-   position: absolute;
-   left: 50%;
-   transform: translateX(-50%);
 }
 
 .burger {
+   position: relative;
    display: none;
-   position: absolute;
 }
 
 .burger-line {
@@ -93,17 +166,10 @@ nav {
 }
 
 .bag-button {
-   border: none;
-   background-color: transparent;
-   display: flex;
-   gap: 10px;
-}
-
-.bag-button-size {
-   height: 30px;
-   width: 30px;
-   padding: 5px;
+   height: 25px;
+   width: 25px;
    border-radius: 50%;
+   border: none;
    background-color: #17873f;
    color: #FFF;
    display: flex;
@@ -113,21 +179,29 @@ nav {
 
 .about-humanrace-container {
    padding: 19px;
-   width: 100%;
+   height: 50vh;
+   width: 100vw;
+   margin-left: -20px;
    background-color: #f7f7f7;
    display: none;
 }
 
+.about-humanrace-container.active {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
 .about-humanrace-content {
-   width: 25%;
+   width: 600px;
 }
 
 .hero-container {
-   height: 94vh;
+   height: 100vh;
    width: 100%;
    display: flex;
-   justify-content: flex-start;
-   align-items: flex-end;
+   justify-content: center;
+   align-items: center;
    background-image: url("https://www.humanrace.com/static/30d84e319bac669b3ffa497042994a20/e1a98/Allure-Beauty-Award-Winner-Facial-Cleanser-Desktop-Banner.webp");
    background-repeat: no-repeat;
    background-position: center;
@@ -176,11 +250,17 @@ nav {
 }
 
 @media only screen and (max-width: 1000px) {
+
+   nav {
+      background-color: #FFF;
+   }
+   .nav-links {
+      padding: 15px;
+   }
    .nav-logo {
       position: relative;
    }
    .burger {
-      position: relative;
       display: block;
    }
    .left-content {
