@@ -13,7 +13,7 @@
 <body>
     <nav>
         <div class="navigation-items">
-            <button class="burger nav-links" onclick="toggleMenu()">
+            <button class="burger nav-links" id="menu-btn" onclick="toggleMenu()">
                 <span class="burger-line"></span>
                 <span class="burger-line"></span>
                 <span class="burger-line"></span>
@@ -29,20 +29,17 @@
             </div>
 
             <div class="right-content nav-contents">
-                <!-- <a href="#" class="nav-links account-button">Account</a> -->
-                <!-- <a href="#" class="nav-links account-button"></a> -->
-                <a href=""class="nav-links account-button"><img src="resources/icons/user.svg" alt=""></a>
-                <!-- <button class="nav-links bag-button">1</button> -->
-                <button class="nav-links bag-button">1</button>
+                <a href=""class="nav-links account-button" id="account-btn"><img src="resources/icons/user.svg" alt=""></a>
+                <button class="nav-links bag-button" id="bag-btn" onclick="toggleBag()">0</button>
             </div>
         </div>
 
         <div id="mobile-menu">
-            <button class="mobile-nav-links" id="setsandkits">
+            <button class="mobile-nav-links" id="setsandkits-btn" onclick="toggleSetsandkits()">
                 <a href="#">Sets + Kits</a>
                 <span>+</span>
             </button><hr>
-            <div class="sub-menu" id="setsandkits-active">
+            <div class="sub-menu" id="setsandkits-submenu">
                 <a href="#" class="sub-menu-links">Shop All</a>
                 <a href="#" class="sub-menu-links">Ozone Protection Set</a>
                 <a href="#" class="sub-menu-links">Routine Pack | Three-Minute Facial</a>
@@ -54,137 +51,85 @@
                 <a href="#" class="sub-menu-links">Kaolin Cleansing Set</a>
                 <a href="#" class="sub-menu-links">Rejuvinating Exfoliation Set</a>
             </div>
-            <button class="mobile-nav-links" id="skincare">
+            <button class="mobile-nav-links" id="skincare-btn" onclick="toggleSkincare()">
                 <a href="#">Skincare</a>
                 <span>+</span>
             </button><hr>
-            <div class="sub-menu" id="setsandkits-active">
+            <div class="sub-menu" id="skincare-submenu">
+                <a href="#" class="sub-menu-links">Routine Pack | Three Minute Facial</a>
                 <a href="#" class="sub-menu-links">Shop All</a>
-                <a href="#" class="sub-menu-links">Ozone Protection Set</a>
-                <a href="#" class="sub-menu-links">Routine Pack | Three-Minute Facial</a>
-                <a href="#" class="sub-menu-links">Routine Refill Set</a>
-                <a href="#" class="sub-menu-links">Body Bar Home Set</a>
-                <a href="#" class="sub-menu-links">Routine Pack + Ceramic Tray Set</a>
-                <a href="#" class="sub-menu-links">Take a Moment Body Bar Set</a>
-                <a href="#" class="sub-menu-links">The All In Set</a>
-                <a href="#" class="sub-menu-links">Kaolin Cleansing Set</a>
-                <a href="#" class="sub-menu-links">Rejuvinating Exfoliation Set</a>
+                <a href="#" class="sub-menu-links">Step 1: Rice Powder Cleanser</a>
+                <a href="#" class="sub-menu-links">Step 2: Lotus Enzyme Exfoliator</a>
+                <a href="#" class="sub-menu-links">Step 3: Humidifying Face Cream</a>
+                <a href="#" class="sub-menu-links">Refills</a>
+                <a href="#" class="sub-menu-links">Learn More</a>
             </div>
-            <button class="mobile-nav-links" id="bodycare">
+            <button class="mobile-nav-links" id="bodycare-btn" onclick="toggleBodycare()">
                 <a href="#">Bodycare</a>
                 <span>+</span>
             </button><hr>
-            <div class="sub-menu">
-                <a href="#" class="sub-menu-links">Shop All</a>
-                <a href="#" class="sub-menu-links">Ozone Protection Set</a>
-                <a href="#" class="sub-menu-links">Routine Pack | Three-Minute Facial</a>
-                <a href="#" class="sub-menu-links">Routine Refill Set</a>
-                <a href="#" class="sub-menu-links">Body Bar Home Set</a>
-                <a href="#" class="sub-menu-links">Routine Pack + Ceramic Tray Set</a>
+            <div class="sub-menu" id="bodycare-submenu">
                 <a href="#" class="sub-menu-links">Take a Moment Body Bar Set</a>
-                <a href="#" class="sub-menu-links">The All In Set</a>
-                <a href="#" class="sub-menu-links">Kaolin Cleansing Set</a>
-                <a href="#" class="sub-menu-links">Rejuvinating Exfoliation Set</a>
+                <a href="#" class="sub-menu-links">Shop All</a>
+                <a href="#" class="sub-menu-links">Reenergizing Whiteclay Body Bar</a>
+                <a href="#" class="sub-menu-links">Energy Channeling Charcoal Body Bar</a>
+                <a href="#" class="sub-menu-links">Humidifying Body Cream</a>
+                <a href="#" class="sub-menu-links">Humidifying Body Cream Refill</a>
+                <a href="#" class="sub-menu-links">Learn More</a>
             </div>
-            <button class="mobile-nav-links" id="suncare">
+            <button class="mobile-nav-links" id="suncare-btn" onclick="toggleSuncare()">
                 <a href="#">Suncare</a>
                 <span>+</span>
             </button><hr>
-            <div class="sub-menu" id="setsandkits-active">
+            <div class="sub-menu" id="suncare-submenu">
+                <a href="#" class="sub-menu-links">Ozone SPF 30 Protection Set</a>
                 <a href="#" class="sub-menu-links">Shop All</a>
-                <a href="#" class="sub-menu-links">Ozone Protection Set</a>
-                <a href="#" class="sub-menu-links">Routine Pack | Three-Minute Facial</a>
-                <a href="#" class="sub-menu-links">Routine Refill Set</a>
-                <a href="#" class="sub-menu-links">Body Bar Home Set</a>
-                <a href="#" class="sub-menu-links">Routine Pack + Ceramic Tray Set</a>
-                <a href="#" class="sub-menu-links">Take a Moment Body Bar Set</a>
-                <a href="#" class="sub-menu-links">The All In Set</a>
-                <a href="#" class="sub-menu-links">Kaolin Cleansing Set</a>
-                <a href="#" class="sub-menu-links">Rejuvinating Exfoliation Set</a>
+                <a href="#" class="sub-menu-links">Ozone SPF Body Protection Cream</a>
+                <a href="#" class="sub-menu-links">Ozone SPF Face Protection Daily Moisturizer</a>
+                <a href="#" class="sub-menu-links">Ozone Body Protection Cream Refill</a>
+                <a href="#" class="sub-menu-links">Ozone SPF Face Protection Daily Moisturizer Refill</a>
+                <a href="#" class="sub-menu-links">Learn More</a>
+                <a href="#" class="sub-menu-links">Humanrace Suncare Standards</a><hr>
             </div>
-            <button class="mobile-nav-links" id="adidas">
+            <button class="mobile-nav-links" id="adidas-btn" onclick="toggleAdidas()">
                 <a href="#">adidas</a>
                 <span>+</span>
             </button><hr>
-            <div class="sub-menu" id="setsandkits-active">
+            <div class="sub-menu" id="adidas-submenu">
                 <a href="#" class="sub-menu-links">Shop All</a>
-                <a href="#" class="sub-menu-links">Ozone Protection Set</a>
-                <a href="#" class="sub-menu-links">Routine Pack | Three-Minute Facial</a>
-                <a href="#" class="sub-menu-links">Routine Refill Set</a>
-                <a href="#" class="sub-menu-links">Body Bar Home Set</a>
-                <a href="#" class="sub-menu-links">Routine Pack + Ceramic Tray Set</a>
-                <a href="#" class="sub-menu-links">Take a Moment Body Bar Set</a>
-                <a href="#" class="sub-menu-links">The All In Set</a>
-                <a href="#" class="sub-menu-links">Kaolin Cleansing Set</a>
-                <a href="#" class="sub-menu-links">Rejuvinating Exfoliation Set</a>
+                <a href="#" class="sub-menu-links">NMD S1 Ryat</a>
+                <a href="#" class="sub-menu-links">Premium Basics &#x2014; Crew</a>
+                <a href="#" class="sub-menu-links">Premium Basics &#x2014; Hoodie</a>
+                <a href="#" class="sub-menu-links">Premium Basics &#x2014; Pants</a>
+                <a href="#" class="sub-menu-links">Premium Basics &#x2014; Shorts</a>
+                <a href="#" class="sub-menu-links">Sičhona</a>
             </div>
-            <button class="mobile-nav-links" id="ceramics">
+            <button class="mobile-nav-links" id="ceramics-btn" onclick="toggleCeramics()">
                 <a href="#">Ceramics</a>
                 <span>+</span>
             </button><hr>
-            <div class="sub-menu" id="setsandkits-active">
+            <div class="sub-menu" id="ceramics-submenu">
                 <a href="#" class="sub-menu-links">Shop All</a>
-                <a href="#" class="sub-menu-links">Ozone Protection Set</a>
-                <a href="#" class="sub-menu-links">Routine Pack | Three-Minute Facial</a>
-                <a href="#" class="sub-menu-links">Routine Refill Set</a>
-                <a href="#" class="sub-menu-links">Body Bar Home Set</a>
-                <a href="#" class="sub-menu-links">Routine Pack + Ceramic Tray Set</a>
-                <a href="#" class="sub-menu-links">Take a Moment Body Bar Set</a>
-                <a href="#" class="sub-menu-links">The All In Set</a>
-                <a href="#" class="sub-menu-links">Kaolin Cleansing Set</a>
-                <a href="#" class="sub-menu-links">Rejuvinating Exfoliation Set</a>
+                <a href="#" class="sub-menu-links">Ceramic Tray &#x2014; Large</a>
+                <a href="#" class="sub-menu-links">Ceramic Tray &#x2014; Small</a>
+                <a href="#" class="sub-menu-links">Ceramic Dish &#x2014; Body Bar</a>
             </div>
-            <button class="mobile-nav-links" id="setsandkits">
+            <button class="mobile-nav-links" id="shopall-btn">
                 <a href="#">Shop All</a>
             </button><hr>
-            <button class="mobile-nav-links" id="setsandkits">
+            <button class="mobile-nav-links" id="subandsave-btn">
                 <a href="#">Subscribe & Save</a>
             </button><hr>
-            <div class="sub-menu" id="setsandkits-active">
-                <a href="#" class="sub-menu-links">Shop All</a>
-                <a href="#" class="sub-menu-links">Ozone Protection Set</a>
-                <a href="#" class="sub-menu-links">Routine Pack | Three-Minute Facial</a>
-                <a href="#" class="sub-menu-links">Routine Refill Set</a>
-                <a href="#" class="sub-menu-links">Body Bar Home Set</a>
-                <a href="#" class="sub-menu-links">Routine Pack + Ceramic Tray Set</a>
-                <a href="#" class="sub-menu-links">Take a Moment Body Bar Set</a>
-                <a href="#" class="sub-menu-links">The All In Set</a>
-                <a href="#" class="sub-menu-links">Kaolin Cleansing Set</a>
-                <a href="#" class="sub-menu-links">Rejuvinating Exfoliation Set</a>
-            </div>
-            <button class="mobile-nav-links" id="setsandkits">
+            <button class="mobile-nav-links" id="wellbeings-btn">
                 <a href="#">Wellbeings</a>
             </button><hr>
-            <div class="sub-menu" id="setsandkits-active">
-                <a href="#" class="sub-menu-links">Shop All</a>
-                <a href="#" class="sub-menu-links">Ozone Protection Set</a>
-                <a href="#" class="sub-menu-links">Routine Pack | Three-Minute Facial</a>
-                <a href="#" class="sub-menu-links">Routine Refill Set</a>
-                <a href="#" class="sub-menu-links">Body Bar Home Set</a>
-                <a href="#" class="sub-menu-links">Routine Pack + Ceramic Tray Set</a>
-                <a href="#" class="sub-menu-links">Take a Moment Body Bar Set</a>
-                <a href="#" class="sub-menu-links">The All In Set</a>
-                <a href="#" class="sub-menu-links">Kaolin Cleansing Set</a>
-                <a href="#" class="sub-menu-links">Rejuvinating Exfoliation Set</a>
-            </div>
-            <button class="mobile-nav-links" id="setsandkits">
+            <button class="mobile-nav-links" id="abouthumanrace-btn">
                 <a href="#">About Humanrace</a>
                 <span>+</span>
             </button>
-            <div class="sub-menu" id="setsandkits-active">
-                <a href="#" class="sub-menu-links">Shop All</a>
-                <a href="#" class="sub-menu-links">Ozone Protection Set</a>
-                <a href="#" class="sub-menu-links">Routine Pack | Three-Minute Facial</a>
-                <a href="#" class="sub-menu-links">Routine Refill Set</a>
-                <a href="#" class="sub-menu-links">Body Bar Home Set</a>
-                <a href="#" class="sub-menu-links">Routine Pack + Ceramic Tray Set</a>
-                <a href="#" class="sub-menu-links">Take a Moment Body Bar Set</a>
-                <a href="#" class="sub-menu-links">The All In Set</a>
-                <a href="#" class="sub-menu-links">Kaolin Cleansing Set</a>
-                <a href="#" class="sub-menu-links">Rejuvinating Exfoliation Set</a>
+            <div class="sub-menu" id="abouthumanrace-submenu">
             </div>
         </div>
-
         <div class="about-humanrace-container">
             <div class="about-humanrace-content">
                 <p>Humanrace is a product company founded by Pharrell Williams with a mission to empower all people in their pursuit of wellbeing. Guided by experiences from his own wellness journey, Pharrell created Humanrace in the belief that taking better care of ourselves can teach us to take better care of each other.</p>
@@ -193,6 +138,15 @@
         </div>
         <!-- <a href=""><img src="resources/images/Humanrace-logo.svg" alt="Humanrace-logo" class="nav-logo"></a> -->
     </nav>
+    <div id="bag">
+        <div id="bag-empty">
+            <h3>Your bag is empty.</h3>
+            <h5>Sign in to see if you have any saved items. Or continue shopping.</h5>
+            <div>
+                <button class="pill-button-green">Sign in</button>
+            </div>
+        </div>
+    </div>
 
     <section class="hero-container">
         <div class="hero-title">

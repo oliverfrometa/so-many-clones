@@ -7,7 +7,9 @@
 }
 
 :root {
-   --green: color: #17873f;
+   --green: #17873f;
+   --blue: #8CA7D2;
+   --orange: #E68C43;
 }
 
 body {
@@ -77,12 +79,28 @@ hr {
    border-radius: 50px;
    transition: 300ms;
 }
+
 .pill-button:hover {
    background-color: #FFF;
    border: solid 2px #FFF;
    color: #000;
 }
 
+.pill-button-green {
+   background-color: var(--green);
+   border: var(--green) solid 2px;
+   color: #FFF;
+   padding: 8px 20px;
+   cursor: pointer;
+   border-radius: 50px;
+   transition: 300ms;
+}
+
+.pill-button-green:hover {
+   background-color: transparent;
+   color: var(--green);
+   border: var(--green) solid 2px;
+}
 .nav-contents {
    font-size: 1.1em;
    display: flex;
@@ -100,10 +118,6 @@ hr {
    flex-direction: column;
    justify-content: center;
    display: none;
-}
-
-#mobile-menu.active {
-   display: flex;
 }
 
 .mobile-nav-links {
@@ -124,11 +138,7 @@ hr {
    flex-direction: column;
    align-items: flex-start;
    justify-content: flex-start;
-   display: none;
-}
-
-.sub-menu.active {
-   display: flex;
+   /* display: none; */
 }
 
 .sub-menu-links {
@@ -139,6 +149,77 @@ hr {
 .sub-menu-links:hover {
    color:#17873f;
    text-decoration: none;
+}
+
+#setsandkits-submenu {
+   display: none;
+}
+#setsandkits-submenu a:first-child {
+   color: var(--green);
+}
+
+#skincare-submenu {
+   display: none;
+}
+#skincare-submenu a:first-child {
+   color: var(--green)
+}
+
+#bodycare-submenu {
+   display: none;
+}
+#bodycare-submenu a:first-child{
+   color: var(--blue)
+}
+
+#suncare-submenu {
+   display: none;
+}
+
+#suncare-submenu a:first-child{
+   color: var(--orange)
+}
+
+#adidas-submenu {
+   display: none;
+}
+
+#ceramics-submenu {
+   display: none;
+}
+
+#shopall-submenu {
+   display: none;
+}
+
+#abouthumanrace-submenu {
+   display: none;
+}
+
+/* ---------------------------------- */
+
+#bag {
+   min-height: 100vh;
+   width: 33.33vw;
+   position: fixed;
+   top: 0;
+   right: 0px;
+   overflow-x: hidden;
+   background-color: #FFF;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   display: none;
+   z-index: 1000;
+}
+
+#bag-empty {
+   padding: 20px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+   gap: 20px;
 }
 
 .right-content {
@@ -175,6 +256,7 @@ hr {
    display: flex;
    align-items: center;
    justify-content: center;
+   z-index: 2000;
 }
 
 .about-humanrace-container {
@@ -255,7 +337,7 @@ hr {
       background-color: #FFF;
    }
    .nav-links {
-      padding: 15px;
+      padding: 10px;
    }
    .nav-logo {
       position: relative;
