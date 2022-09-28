@@ -128,19 +128,14 @@ function toggleCeramics() {
 
 
 const bag = document.querySelector("#bag")
-const bagBtn = document.querySelector("#bag-btn")
 const accountBtn = document.querySelector("#account-btn")
 let toggleBagStatus = true;
 function toggleBag() {
     if (toggleBagStatus == true) { 
         bag.style.display = "flex";
-        // bagBtn.style.zIndex = 1000;
-        // accountBtn.style.zIndex = 1000;
          toggleBagStatus = false;
     } else if (toggleBagStatus == false) {
         toggleBagStatus = true;
-        // bagBtn.style.zIndex = 0;
-        // accountBtn.style.zIndex = 0;
         bag.style.display = "none";
     }
 }
