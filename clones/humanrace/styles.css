@@ -10,6 +10,8 @@
    --green: #17873f;
    --blue: #8CA7D2;
    --orange: #E68C43;
+
+   --general-padding: 15px;
 }
 
 body {
@@ -34,7 +36,6 @@ nav {
    flex-direction: column;
    transition: 300ms;
    z-index: 100;
-   padding: 0px 20px;
    transform: 300ms;
 }
 
@@ -107,7 +108,7 @@ hr {
 }
 
 .nav-links {
-   padding: 18px;
+   padding: var(--general-padding);
    width: auto;
 }
 
@@ -121,7 +122,7 @@ hr {
 }
 
 .mobile-nav-links {
-   padding: 15px 0px;
+   padding: var(--general-padding);
    width: 100%;
    display: flex;
    justify-content: space-between;
@@ -133,22 +134,20 @@ hr {
 }
 
 .sub-menu {
-   padding: 15px 0px;
+   padding: var(--general-padding);
    display: flex;
    flex-direction: column;
    align-items: flex-start;
    justify-content: flex-start;
-   /* display: none; */
 }
 
 .sub-menu-links {
    width: 100%;
-   padding: 8px 0px;
+   padding: 5px 0px;
 }
 
 .sub-menu-links:hover {
    color:#17873f;
-   text-decoration: none;
 }
 
 #setsandkits-submenu {
@@ -199,20 +198,22 @@ hr {
 /* ---------------------------------- */
 
 #bag {
-   min-height: 100vh;
-   width: 33%;
+   min-height: 50%;
+   width: 25%;
    position: fixed;
-   top: 0;
-   right: 0px;
+   top: 75px;
+   right: 12px;
    background-color: #FFF;
    display: flex;
    justify-content: center;
    align-items: center;
    display: none;
+   border-radius: 25px;
+   /* box-shadow: -5px 0px 50px 1px #9d9d9d7d; */
 }
 
 #bag-empty {
-   padding: 20px;
+   padding: var(--general-padding);
    display: flex; 
    flex-direction: column;
    align-items: center;
@@ -222,7 +223,11 @@ hr {
 
 @media only screen and (max-width: 1000px) {
    #bag {
+      height: 33%;
       width: 100%;
+      top: 20px;
+      right: 0px;
+      border-radius: 0px;
    }
 }
 
@@ -232,8 +237,9 @@ hr {
 }
 
 .nav-logo {
+   align-self: center;
    height: 20px;
-   width: auto;
+   display: none;
 }
 
 .burger {
@@ -251,8 +257,8 @@ hr {
 }
 
 .bag-button {
-   height: 25px;
-   width: 25px;
+   height: 30px;
+   width: 30px;
    border-radius: 50%;
    border: none;
    background-color: #17873f;
@@ -264,17 +270,16 @@ hr {
 }
 
 .about-humanrace-container {
-   padding: 19px;
+   padding: var(--general-padding);
    width: 100vw;
-   margin-left: -20px;
    background-color: #f7f7f7;
    display: none;
 }
 
 .about-humanrace-container.active {
    display: flex;
-   align-items: center;
-   justify-content: center;
+   align-items: flex-start;
+   justify-content: flex-start;
 }
 
 .about-humanrace-content {
@@ -291,28 +296,12 @@ hr {
    background-repeat: no-repeat;
    background-position: center;
    background-size: cover;
+   text-align: center;
 }
 
 .hero-title {
-   padding: 19px;
+   padding: var(--general-padding);
    color: #FFF;
-}
-
-.hero-sticker-container {
-   border: red solid 2px;
-   position: fixed;
-   height: 100%;
-   width: 100%;
-   padding: 10px;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-}
-
-.hero-sticker {
-   max-height: 8em;
-   color: #FFF;
-   
 }
 
 .banner-image {
@@ -321,7 +310,16 @@ hr {
 
 .text-block {
    font-size: 32px;
+   line-height: 40px;
    padding: 40px;
+}
+
+@media only screen and (max-width: 1000px) {
+   .text-block {
+      font-size: 20px;
+      line-height: 25px;
+      padding: 20px;
+   }
 }
 
 .double-tile-row {
@@ -338,12 +336,11 @@ hr {
 
    nav {
       background-color: #FFF;
-   }
-   .nav-links {
-      padding: 10px;
+      padding: 0px 10px;
    }
    .nav-logo {
       position: relative;
+      display: block;
    }
    .burger {
       display: block;
@@ -386,28 +383,28 @@ hr {
 
  .humidifying-cream-application {
    background-image: url("https://www.humanrace.com/static/2802d23d912dc65894a11570ab807138/6ec4f/ID_File_-_Aspect_24th_still_2.webp");
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5em;
-      text-align: center;
-      padding: 15px 25px;
-      transition: 100ms;
+   background-size: cover;
+   background-position: center;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 1.5em;
+   text-align: center;
+   padding: 15px 25px;
+   transition: 100ms;
  }
 
  .pharrel-wellbeing {
    background-image: url("https://www.humanrace.com/static/09cef1c8763f42e296a19c0afc6a477a/9a1b7/pharrell-wellbeing.webp");
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5em;
-      text-align: center;
-      padding: 15px 25px;
-      transition: 100ms;
+   background-size: cover;
+   background-position: center;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 1.5em;
+   text-align: center;
+   padding: 15px 25px;
+   transition: 100ms;
  }
 
  footer {
