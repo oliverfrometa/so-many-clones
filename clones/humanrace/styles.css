@@ -31,12 +31,14 @@ a:hover {
 nav {
    position: fixed;
    background-color: transparent;
-   width: 100%;
+   width: 100vw;
    display: flex;
    flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
    transition: 300ms;
    z-index: 100;
-   transform: 300ms;
+   border: solid red 2px;
 }
 
 nav:hover {
@@ -53,22 +55,11 @@ button {
    background-color: transparent;
 }
 
-hr {
-   margin: 0;
-   width: 100vw;
-   margin-left: -20px;
-
-}
-
-.navigation-items {
+.nav-bar {
+   width: 100%;
    display: flex;
    justify-content: space-between;
    align-items: center;
-}
-
-.navigation-items a {
-   color: #000;
-   transition: 300ms;
 }
 
 .pill-button {
@@ -102,12 +93,9 @@ hr {
    color: var(--green);
    border: var(--green) solid 2px;
 }
-.nav-contents {
-   font-size: 1.1em;
-   display: flex;
-}
 
-.nav-links {
+.nav-btns {
+   font-size: 1.1em;
    padding: var(--general-padding);
    width: auto;
 }
@@ -252,7 +240,7 @@ hr {
    height: 2px;
    display: flex;
    flex-direction: column;
-   background-color: #17873f;
+   background-color: var(--green);
    margin: 6px 0;
 }
 
@@ -261,7 +249,7 @@ hr {
    width: 30px;
    border-radius: 50%;
    border: none;
-   background-color: #17873f;
+   background-color: var(--green);
    color: #FFF;
    display: flex;
    align-items: center;
@@ -273,7 +261,7 @@ hr {
    padding: var(--general-padding);
    width: 100vw;
    background-color: #f7f7f7;
-   display: none;
+   /* display: none; */
 }
 
 .about-humanrace-container.active {
@@ -286,26 +274,22 @@ hr {
    width: 600px;
 }
 
-.hero-container {
-   height: 100vh;
+#hero {
+   height: 90vh;
    width: 100%;
    display: flex;
-   justify-content: center;
-   align-items: center;
+   justify-content: flex-start;
+   align-items: flex-end;
    background-image: url("https://www.humanrace.com/static/30d84e319bac669b3ffa497042994a20/e1a98/Allure-Beauty-Award-Winner-Facial-Cleanser-Desktop-Banner.webp");
    background-repeat: no-repeat;
    background-position: center;
    background-size: cover;
-   text-align: center;
 }
 
-.hero-title {
+.hero-text {
    padding: var(--general-padding);
    color: #FFF;
-}
-
-.banner-image {
-   width: 100vw;
+   border: solid red 2px;
 }
 
 .text-block {
