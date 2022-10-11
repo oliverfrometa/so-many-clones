@@ -22,19 +22,7 @@ ahrBtn.addEventListener("mouseover", () => {
     }
 })
 
-const burger = document.querySelector(".burger")
-const mobileMenu = document.querySelector("#mobile-menu")
-const setsandkits = document.querySelector("#setsandkits")
-let toggleMenuStatus = true;
-function toggleMenu() {
-    if (toggleMenuStatus == true) { 
-        mobileMenu.style.display = "flex"
-         toggleMenuStatus = false;
-    } else if (toggleMenuStatus == false) {
-        toggleMenuStatus = true;
-        mobileMenu.style.display = "none"
-    }
-}
+g 
 
 
 // ------------------------------------------ MOBILE MENU
